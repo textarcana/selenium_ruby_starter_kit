@@ -23,6 +23,13 @@ downloaded, start the server by double-clicking selenium-server.jar
 
 = How To Use
 
+    ruby ts_run_all_tests.rb http://www.google.com
+
+That command will launch Firefox and run the included example tests
+against Google.com.  If you would like to run tests in MSIE instead of
+Firefox, browser, edit line 31 of selenium_helper.rb and change
+*firefox to *iexplore
+
 == Arguments
 One argument is expected:
 0. The root domain of the site against which to test (eg http://www.google.com)
