@@ -7,16 +7,22 @@
 
 require "selenium_helper"
 
-# == Globally Verify Page Titles
-class TitlesGlobalTest < Test::Unit::TestCase
+# == Verify that the page is what we expect
+class SanityTest < Test::Unit::TestCase
 
   include SeleniumHelper
 
-  # === Test Public Page Titles
+  # === Test Page Title
   def test_public_page_titles
     browser.open "/"
     assert_equal "Google", browser.title
-  end  
+  end
+
+  # === Verify expected content is present
+  def test_text_is_present
+    browser.open "/"
+    assert browser.text? "Advanced Search"
+  end
 
 end
 
