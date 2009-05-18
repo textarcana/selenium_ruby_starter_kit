@@ -25,11 +25,12 @@ unless ARGV.length >= 1
 end
 
 module SeleniumHelper
-  attr_reader :browser
+  attr_reader :selenium
   $domain = ARGV[0]
 
   # == Start a new browser instance with no cookies or cached files.
   def setup
+    @verification_errors = []
     @selenium = Selenium::Client::Driver.new "localhost", 4444, "*firefox", $domain, 10000
     @selenium.start_new_browser_session
   end
@@ -37,6 +38,7 @@ module SeleniumHelper
   # == Close the browser.
   def teardown
     @selenium.close_current_browser_session
+    assert_equal [], @verification_errors
   end
 
   # == Stringified JavaScript reference to the window object of the Application Under Test.

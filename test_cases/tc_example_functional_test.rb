@@ -10,7 +10,7 @@ class FunctionalExampleTest < Test::Unit::TestCase
 
   include SeleniumHelper
 
-  def test_functional_example
+  def test_searching_on_the_first_web_server
     @selenium.open "/"
     @selenium.type "q", "the first web server"
     @selenium.click "btnG"
@@ -18,6 +18,16 @@ class FunctionalExampleTest < Test::Unit::TestCase
     assert @selenium.is_text_present("Tim Berners-Lee")
   end
 
+  def test_searching_on_the_osi_stack
+    @selenium.open "/"
+    @selenium.type "q", "osi stack"
+    @selenium.click "btnG"
+    begin
+        assert @selenium.is_text_present("seven layers")
+    rescue Test::Unit::AssertionFailedError
+        @verification_errors << $!
+    end
+  end
 
 end
 
