@@ -34,6 +34,14 @@ change *firefox to *iexplore or *opera
 One argument is expected:
 0. The root domain of the site against which to test (eg http://www.google.com)
 
+== Running your own tests
+
+0. Delete the test_cases/google_examples directory
+0. Record a test using the Selenium IDE
+0. Once you are satisfied with your test, click on Options > Format > Ruby - Selenium RC
+0. Copy the test_new function and paste it into test_cases/tc_yours.rb
+0. Invoke ts_run_all_tests.rb, and remember to pass the full URL of the site you are testing
+
 == Troubleshooting
 
 Remember that these scripts require Selenium Server running on 
