@@ -10,7 +10,7 @@
 # 0. A username for that site
 # 0. A password for that username
 # === Warnings
-# Be sure to supply the (sub)domain to which the site resolves.  That is, if the site you are testing resolves to www.google.com, then you cannot supply google.com as the domain and the script will fail if you do.
+# Be sure to supply the (sub)domain to which the site resolves.  That is, if the site you are testing resolves to www.google.com, then you cannot supply google.com (without the 'www' subdomain) as the domain and the script will fail if you do.
 #
 # Requires Selenium Server Beta 1 running on port 4444.
 
