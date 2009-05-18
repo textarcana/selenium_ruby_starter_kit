@@ -15,15 +15,23 @@ class FunctionalExampleTest < Test::Unit::TestCase
     @selenium.type "q", "the first web server"
     @selenium.click "btnG"
     @selenium.wait_for_page_to_load "30000"
-    assert @selenium.is_text_present("Tim Berners-Lee")
+    begin
+      assert @selenium.is_text_present("Tim Berners-Lee")
+    rescue Test::Unit::AssertionFailedError
+        @verification_errors << $!
+    end
+
   end
 
-  def test_searching_on_the_osi_stack
+
+
+  def test_searching_on_i_can_haz_cheezburger
     @selenium.open "/"
-    @selenium.type "q", "osi stack"
+    @selenium.type "q", "i can haz cheezburger"
     @selenium.click "btnG"
+    @selenium.wait_for_page_to_load "30000"
     begin
-        assert @selenium.is_text_present("seven layers")
+        assert @selenium.is_text_present("Lolcats")
     rescue Test::Unit::AssertionFailedError
         @verification_errors << $!
     end

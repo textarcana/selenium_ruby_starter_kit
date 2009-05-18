@@ -31,13 +31,18 @@ module SeleniumHelper
   # == Start a new browser instance with no cookies or cached files.
   def setup
     @verification_errors = []
-    @selenium = Selenium::Client::Driver.new "localhost", 4444, "*firefox", $domain, 10000
-    @selenium.start_new_browser_session
+    if $selenium
+      @selenium = $selenium
+    else
+      @selenium = Selenium::Client::Driver.new "localhost", 4444, "*firefox", $domain, 10000
+      @selenium.start_new_browser_session
+    end
+    @selenium.set_context("selenium_helper")
   end
 
   # == Close the browser.
   def teardown
-    @selenium.close_current_browser_session
+    @selenium.stop unless $selenium
     assert_equal [], @verification_errors
   end
 
