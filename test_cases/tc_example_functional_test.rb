@@ -11,11 +11,11 @@ class FunctionalExampleTest < Test::Unit::TestCase
   include SeleniumHelper
 
   def test_functional_example
-    browser.open "/"
-    browser.type "q", "the first web server"
-    browser.click "btnG"
-    browser.wait_for_page_to_load "30000"
-    assert browser.is_text_present("Tim Berners-Lee")
+    @selenium.open "/"
+    @selenium.type "q", "the first web server"
+    @selenium.click "btnG"
+    @selenium.wait_for_page_to_load "30000"
+    assert @selenium.is_text_present("Tim Berners-Lee")
   end
 
 

@@ -21,22 +21,22 @@ require "selenium/client"
 
 unless ARGV.length >= 1
   puts "Argument Missing: You must specify the domain against which to test."
-  exit 1 
+  exit 1
 end
 
 module SeleniumHelper
   attr_reader :browser
-  $domain = ARGV[0] 
-  
+  $domain = ARGV[0]
+
   # == Start a new browser instance with no cookies or cached files.
   def setup
-    @browser = Selenium::Client::Driver.new "localhost", 4444, "*firefox", $domain, 10000
-    browser.start_new_browser_session
+    @selenium = Selenium::Client::Driver.new "localhost", 4444, "*firefox", $domain, 10000
+    @selenium.start_new_browser_session
   end
 
   # == Close the browser.
   def teardown
-    browser.close_current_browser_session
+    @selenium.close_current_browser_session
   end
 
   # == Stringified JavaScript reference to the window object of the Application Under Test.
@@ -44,7 +44,7 @@ module SeleniumHelper
 
   # == Prepend some stringified JavaScript with a reference to the window object of the Application Under Test.
   def js_get(js_string)
-    return browser.js_eval($window + js_string)
+    return @selenium.js_eval($window + js_string)
   end
 
 

@@ -14,14 +14,14 @@ class SanityTest < Test::Unit::TestCase
 
   # === Test Page Title
   def test_public_page_titles
-    browser.open "/"
-    assert_equal "Google", browser.title
+    @selenium.open "/"
+    assert_equal "Google", @selenium.title
   end
 
   # === Verify expected content is present
   def test_text_is_present
-    browser.open "/"
-    assert browser.text? "Advanced Search"
+    @selenium.open "/"
+    assert @selenium.text? "Advanced Search"
   end
 
 end
