@@ -3,9 +3,6 @@
 = Name
 Selenium Ruby Starter Kit
 
-= Last Modified
-  Time-stamp: <c:/noah/github/selenium_ruby_starter_kit/README.rdoc last changed by Noah Sussman on NYCD887/Textarcana Monday 18 May 2009 at  14:14:12>
-
 = Synopsis
     ruby ts_run_all_tests.rb http://www.google.com
 
@@ -20,9 +17,9 @@ Provide setup, teardown and other utility methods for using Selenium with Test::
 0. Ruby and RubyGems must be installed on your system.
 0. The Selenium Client gem must be installed by running
     gem install selenium-client
-0. Download and unzip the latest version of the {Selenium RC
-Server}[http://seleniumhq.org/download/].  Once downloaded,
-start the server by double-clicking selenium-server.jar
+0. Download and unzip the latest version of the 
+{Selenium RC Server}[http://seleniumhq.org/download/].  Once
+downloaded, start the server by double-clicking selenium-server.jar
 
 = How To Use
 
@@ -32,8 +29,9 @@ One argument is expected:
 
 == Troubleshooting
 
-Remember that these scripts require Selenium Server running on port
-4444.  You should be fine as long as you have double-clicked
+Remember that these scripts require Selenium Server running on 
+port 4444.  
+You should be fine as long as you have double-clicked
 selenium-server.jar before you try running this ;-)
 
 Be sure to supply the (sub)domain to which the site resolves.  That is, if the site you are testing resolves to www.google.com, then you cannot supply google.com (without the 'www' subdomain) as the domain and the script will fail if you do.
