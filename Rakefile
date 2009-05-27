@@ -12,3 +12,11 @@ namespace :rc do
   end
 
 end
+
+desc "run some example tests against Google.com"
+
+task :examples do
+
+  puts %x{ ruby ts_run_all_tests.rb http://google.com}
+
+end
