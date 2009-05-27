@@ -5,7 +5,7 @@
 # = Description
 # Prove the HTML title of page is what we expect it to be at the time the page is served.  These 'idiot checks' will alert us if something has gone completely awry.
 
-require "selenium_helper"
+require "helpers/selenium_helper"
 
 # == Verify that the page is what we expect
 class SanityTest < Test::Unit::TestCase

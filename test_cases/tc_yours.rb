@@ -15,7 +15,7 @@
 #
 # It is a good practice to rename your test_new function to something else -- test_mumble, test_foo, test_whatever -- as long as the name still begins with 'test_'.
 
-require "selenium_helper"
+require "helpers/selenium_helper"
 
 # == Run tests you have created with the Selenium IDE
 class YourTest < Test::Unit::TestCase

@@ -5,7 +5,7 @@
 # = Description
 # Run a very basic functional test
 
-require "selenium_helper"
+require "helpers/selenium_helper"
 class FunctionalExampleTest < Test::Unit::TestCase
 
   include SeleniumHelper
