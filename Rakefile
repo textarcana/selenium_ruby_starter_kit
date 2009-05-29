@@ -1,7 +1,7 @@
 
 require 'rake/clean'
 
-require 'tasks/run.rb'
+#require 'tasks/run.rb'
 
 CLEAN.include 'create.rid', '**/*#'
 
