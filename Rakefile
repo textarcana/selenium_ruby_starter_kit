@@ -23,7 +23,7 @@ namespace :rc do
 
 end
 
-desc "(currently broken) run some example tests against Google.com"
+desc "run some example tests against Google.com"
 
 task :examples do
 
