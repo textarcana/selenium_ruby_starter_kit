@@ -41,7 +41,13 @@ module SeleniumHelper
   end
 
   # == Close the browser.
+  # note the use of heredoc for inline JavaScript
+
   def teardown
+#     @selenium.js_eval <<SCRIPT
+# this.browserbot.getCurrentWindow().document.body.style.backgroundColor='yellow';
+# SCRIPT
+
     @selenium.stop unless $selenium
     assert_equal [], @verification_errors
   end
